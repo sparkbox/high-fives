@@ -3,18 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "clean": "rimraf public/css",
+    "build": "npm run clean && npm run styles",
     "styles": "node-sass source/scss/ -o public/css",
-    "start": "node ./bin/www"
+    "prestart": "npm run build",
+    "start": "parallelshell 'node tasks/watch.js' 'node ./bin/www'"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
+    "chokidar": "^1.7.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
+    "exit-hook": "^1.1.1",
     "express": "~4.15.2",
     "express-handlebars": "^3.0.0",
     "morgan": "~1.8.1",
     "node-sass": "^4.5.3",
     "parallelshell": "^3.0.1",
-    "serve-favicon": "~2.4.2"
+    "rimraf": "^2.6.2",
+    "serve-favicon": "~2.4.2",
+    "shelljs": "^0.7.8"
   }
 }
