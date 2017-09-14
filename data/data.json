@@ -1,7 +1,16 @@
 {
   "people": [
-    "Katy",
-    "Patrick",
-    "Heather"
+    {
+      "name": "Katy",
+      "image": "/assets/images/katy.jpg"
+    },
+    {
+      "name": "Patrick",
+      "image": "/assets/images/patrick.jpg"
+    },
+    {
+      "name": "Heather",
+      "image": "/assets/images/heather.jpg"
+    }
   ]
 }

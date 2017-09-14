@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "clean": "rimraf public/css",
-    "build": "npm run clean && npm run styles",
+    "build": "npm run clean && parallelshell 'npm run styles' 'npm run assets'",
     "styles": "node-sass source/scss/ -o public/css",
+    "assets": "ncp source/assets public/assets --stopOnErr",
     "prestart": "npm run build",
     "start": "parallelshell 'node tasks/watch.js' 'node ./bin/www'"
   },
@@ -18,6 +19,7 @@
     "express": "~4.15.2",
     "express-handlebars": "^3.0.0",
     "morgan": "~1.8.1",
+    "ncp": "^2.0.0",
     "node-sass": "^4.5.3",
     "parallelshell": "^3.0.1",
     "rimraf": "^2.6.2",

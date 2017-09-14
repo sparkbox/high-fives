@@ -1,6 +1,6 @@
-$best-color: #ffff00;
+@import 'setup.global-variables';
+@import 'setup.global-functions';
 
-body {
-  background: $best-color;
-  font-family: helvetica;
-}
+@import 'generic.custom-reset';
+
+@import 'component.slice';

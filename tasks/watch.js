@@ -36,9 +36,8 @@ const buildStyles = () => {
 }
 
 const copyAssets = () => {
-  shell.exec('npm run copy', function(code, output){
-    console.log('Tell Ethan to implement a task for copying assets into public/');
-    // console.log('👯  Copying assets');
+  shell.exec('npm run assets', function(code, output){
+    console.log('👯  Copying assets');
   });
 }
 

@@ -1,5 +1,6 @@
-<h1>{{ title }}</h1>
-
 {{#each people}}
-  {{ this }}
+  <div class="c-slice">
+    {{ this.name }}
+    <img src="{{ this.image }}" alt="Flattering portrait of {{ this.name }}">
+  </div>
 {{/each}}

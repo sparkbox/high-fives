@@ -1,3 +1,19 @@
-body {
-  background: #ffff00;
-  font-family: helvetica; }
+html,
+body,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0; }
+
+.c-slice {
+  min-height: 90vh; }
+  .c-slice:nth-child(1) {
+    background-color: #eb726b; }
+  .c-slice:nth-child(2) {
+    background-color: #6bc6eb; }
+  .c-slice:nth-child(3) {
+    background-color: #cd6beb; }
+  .c-slice:nth-child(4) {
+    background-color: #ebc36b; }

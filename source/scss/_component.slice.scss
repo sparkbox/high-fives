@@ -1,0 +1,16 @@
+.c-slice {
+  min-height: 90vh;
+
+  &:nth-child(1) {
+    background-color: c(salmon);
+  }
+  &:nth-child(2) {
+    background-color: c(powerade);
+  }
+  &:nth-child(3) {
+    background-color: c(barney);
+  }
+  &:nth-child(4) {
+    background-color: c(sunshine);
+  }
+}
