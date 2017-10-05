@@ -20,3 +20,28 @@ html {
   // https://stackoverflow.com/questions/2710764/preserve-html-font-size-when-iphone-orientation-changes-from-portrait-to-landsca
   -webkit-text-size-adjust: 100%;
 }
+
+body {
+  &::before {
+    // This is is used to draw a little background behind the content when you
+    // overscroll the page. It's only visible in Safari, but it's a fun lil
+    // easter egg.
+    content: '';
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background-image: url(/assets/svg/polka-dot-pattern.svg);
+    background-repeat: repeat;
+    background-position: -10px;
+
+    background-size: 60px;
+
+    z-index: -1;
+  }
+}
+
+

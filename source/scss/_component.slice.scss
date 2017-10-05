@@ -1,9 +1,17 @@
 .c-slice {
-  $bp-image-beside-body: 30em;
-  $image-size: 6rem;
+  $image-size: 24vw;
+  $image-max-size: 300px;
+
+  $bp-image-beside-body: 67em;
+  $bp-start-growing-body: $bp-image-beside-body + 5em;
+  $bp-image-stops-growing: $image-max-size * 100 / 24;
+
+  $page-margin: 6vw;
+
+  $slice-max-width: 80em;
 
   min-height: 100vh;
-  padding: 3rem 6%;
+  padding: 3rem $page-margin;
 
   // Contain padding within height
   box-sizing: border-box;
@@ -30,6 +38,9 @@
       // Contain absolute image
       position: relative
     }
+
+    max-width: $slice-max-width;
+    margin: 0 auto;
   }
 
   &__image-and-name-wrapper {
@@ -38,9 +49,28 @@
     min-height: calc(#{$image-size} + 1.25rem);
 
     // This carves out space for the absolute image
-    padding-left: calc(#{$image-size} + 2rem);
+    padding-left: calc(#{$image-size} * 1.4);
 
-    padding-bottom: 1.25rem;
+    .c-slice:nth-child(2n) & {
+      padding-left: 0;
+      padding-right: calc(#{$image-size} * 1.4);
+    }
+
+    @media (min-width: $bp-image-stops-growing) {
+      min-height: calc(#{$image-max-size} + 1.25rem);
+      padding-left: calc(#{$image-max-size} * 1.4);
+
+      .c-slice:nth-child(2n) & {
+        padding-left: 0;
+        padding-right: calc(#{$image-max-size} * 1.4);
+      }
+    }
+
+    @media (min-width: $bp-image-beside-body) {
+      min-height: auto;
+    }
+
+    margin-bottom: 1.25rem;
 
     // flexbox is only used for vertical centering here
     display: flex;
@@ -48,16 +78,33 @@
 
     // Contain absolute image
     position: relative;
+
+    @media (min-width: $bp-image-beside-body) {
+      // This stops this element from containing the image, and lets it be
+      // contained by the &__inner-wrapper instead. Be free, sweet image.
+      position: static;
+    }
   }
 
   &__image-wrapper {
     position: absolute;
-    left: 0;
+    left: 0.5rem;
     top: 50%;
     margin-top: $image-size / 2 * -1;
 
     width: $image-size;
     height: $image-size;
+
+    .c-slice:nth-child(2n) & {
+      left: auto;
+      right: 0.5rem;
+    }
+
+    @media (min-width: $bp-image-stops-growing) {
+      width: $image-max-size;
+      height: $image-max-size;
+      margin-top: $image-max-size / 2 * -1;
+    }
 
     border-radius: 99rem;
 
@@ -65,7 +112,7 @@
 
     // Border is drawn via box-shadow so it doesn't affect flow or cover up
     // any of the image
-    box-shadow: 0 0 0 8px white;
+    box-shadow: 0 0 0 0.5rem white;
   }
 
   &__image-element {
@@ -87,6 +134,9 @@
     @media (min-width: 25em) {
       font-size: 2.5 * 100vw / 25;
     }
+    @media (min-width: 52.5em) {
+      font-size: 5.25rem;
+    }
 
     @media (min-width: 32em) {
       // font-size: 5.25rem;
@@ -102,5 +152,32 @@
     // Blending black with the background helps body copy look a little
     // smoother
     color: rgba(black, 0.8);
+
+    @media (min-width: $bp-image-beside-body) {
+      // This carves out space for the absolute image
+      padding-left: calc(#{$image-size} * 1.4);
+
+      .c-slice:nth-child(2n) & {
+        padding-left: 0;
+        padding-right: calc(#{$image-size} * 1.4);
+      }
+
+      @media (min-width: $bp-image-stops-growing) {
+        padding-left: calc(#{$image-max-size} * 1.4);
+
+        .c-slice:nth-child(2n) & {
+          padding-left: 0;
+          padding-right: calc(#{$image-max-size} * 1.4);
+        }
+      }
+    }
+
+    @media (min-width: $bp-start-growing-body) {
+      font-size: 1.25 * 100vw / 72;
+
+      @media (min-width: 89em) {
+        font-size: (1.25 * 100 / 72) / 100 * 89em;
+      }
+    }
   }
 }
