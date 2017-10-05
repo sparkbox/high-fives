@@ -1,15 +1,15 @@
 {
   "people": [
     {
-      "name": "Katy",
+      "name": "Katy Bowman",
       "image": "/assets/images/katy.jpg"
     },
     {
-      "name": "Patrick",
+      "name": "Patrick Fulton",
       "image": "/assets/images/patrick.jpg"
     },
     {
-      "name": "Heather",
+      "name": "Heather Taylor",
       "image": "/assets/images/heather.jpg"
     }
   ]

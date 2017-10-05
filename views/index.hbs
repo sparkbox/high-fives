@@ -1,6 +1,14 @@
 {{#each people}}
   <div class="c-slice">
-    {{ this.name }}
-    <img src="{{ this.image }}" alt="Flattering portrait of {{ this.name }}">
+    <div class="c-slice__inner-wrapper">
+      <div class="c-slice__image-and-name-wrapper">
+        <div class="c-slice__image-wrapper">
+          <img class="c-slice__image-element" src="{{ this.image }}" alt="Flattering portrait of {{ this.name }}">
+        </div>
+        <h2 class="c-slice__name">{{ this.name }}</h2>
+      </div>
+      <p class="c-slice__body"><strong>Ipsum molestias nesciunt laborum</strong> maxime sequi culpa nemo deleniti dolor excepturi! Delectus rerum aspernatur architecto libero ab. Ipsam eaque magni nostrum ipsum natus minima ex sequi.</p>
+      <p class="c-slice__body"><strong>Consectetur facilis</strong> ipsum ducimus <strong>voluptatibus quod nisi.</strong> Voluptate vitae velit suscipit deserunt nihil ut magnam facilis consequatur pariatur omnis quae libero autem.</p>
+    </div>
   </div>
 {{/each}}

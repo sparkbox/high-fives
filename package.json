@@ -8,7 +8,7 @@
     "styles": "node-sass source/scss/ -o public/css",
     "assets": "ncp source/assets public/assets --stopOnErr",
     "prestart": "npm run build",
-    "start": "parallelshell 'node tasks/watch.js' 'node ./bin/www'"
+    "start": "parallelshell 'node tasks/watch.js' 'nodemon ./bin/www'"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -21,6 +21,7 @@
     "morgan": "~1.8.1",
     "ncp": "^2.0.0",
     "node-sass": "^4.5.3",
+    "nodemon": "^1.12.1",
     "parallelshell": "^3.0.1",
     "rimraf": "^2.6.2",
     "serve-favicon": "~2.4.2",

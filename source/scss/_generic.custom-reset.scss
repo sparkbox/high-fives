@@ -7,3 +7,16 @@ h3 {
   margin: 0;
   padding: 0;
 }
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+html {
+  // Prevent font scaling in landscape in iOS
+  // https://stackoverflow.com/questions/2710764/preserve-html-font-size-when-iphone-orientation-changes-from-portrait-to-landsca
+  -webkit-text-size-adjust: 100%;
+}
