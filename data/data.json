@@ -2,15 +2,30 @@
   "people": [
     {
       "name": "Katy Bowman",
-      "image": "/assets/images/katy.jpg"
+      "image": "/assets/images/katy.jpg",
+      "article": {
+        "title": "Sticky Headers And Other Sticky Situations",
+        "url": "https://seesparkbox.com/foundry/sticky_headers_and_other_sticky_situations",
+        "views": 3789
+      }
     },
     {
       "name": "Patrick Fulton",
-      "image": "/assets/images/patrick.jpg"
+      "image": "/assets/images/patrick.jpg",
+      "article": {
+        "title": "Sticky Headers And Other Sticky Situations",
+        "url": "https://seesparkbox.com/foundry/sticky_headers_and_other_sticky_situations",
+        "views": 3789
+      }
     },
     {
       "name": "Heather Taylor",
-      "image": "/assets/images/heather.jpg"
+      "image": "/assets/images/heather.jpg",
+      "article": {
+        "title": "Sticky Headers And Other Sticky Situations",
+        "url": "https://seesparkbox.com/foundry/sticky_headers_and_other_sticky_situations",
+        "views": 3789
+      }
     }
   ]
 }
