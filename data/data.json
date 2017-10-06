@@ -2,15 +2,19 @@
   "people": [
     {
       "name": "Katy Bowman",
+      "heShePronoun": "she",
+      "hisHerPronoun": "her",
       "image": "/assets/images/katy.jpg",
       "article": {
         "title": "Sticky Headers And Other Sticky Situations",
         "url": "https://seesparkbox.com/foundry/sticky_headers_and_other_sticky_situations",
-        "views": 3789
+        "views": 1337
       }
     },
     {
       "name": "Patrick Fulton",
+      "heShePronoun": "he",
+      "hisHerPronoun": "his",
       "image": "/assets/images/patrick.jpg",
       "article": {
         "title": "Sticky Headers And Other Sticky Situations",
@@ -20,11 +24,13 @@
     },
     {
       "name": "Heather Taylor",
+      "heShePronoun": "she",
+      "hisHerPronoun": "her",
       "image": "/assets/images/heather.jpg",
       "article": {
         "title": "Sticky Headers And Other Sticky Situations",
         "url": "https://seesparkbox.com/foundry/sticky_headers_and_other_sticky_situations",
-        "views": 3789
+        "views": 1200
       }
     }
   ]

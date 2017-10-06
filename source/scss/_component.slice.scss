@@ -6,7 +6,7 @@
   $bp-start-growing-body: $bp-image-beside-body + 5em;
   $bp-image-stops-growing: $image-max-size * 100 / 24;
 
-  $page-margin: 6vw;
+  $page-margin: 10vw;
 
   $slice-max-width: 80em;
 
@@ -51,19 +51,9 @@
     // This carves out space for the absolute image
     padding-left: calc(#{$image-size} * 1.4);
 
-    .c-slice:nth-child(2n) & {
-      padding-left: 0;
-      padding-right: calc(#{$image-size} * 1.4);
-    }
-
     @media (min-width: $bp-image-stops-growing) {
       min-height: calc(#{$image-max-size} + 1.25rem);
       padding-left: calc(#{$image-max-size} * 1.4);
-
-      .c-slice:nth-child(2n) & {
-        padding-left: 0;
-        padding-right: calc(#{$image-max-size} * 1.4);
-      }
     }
 
     @media (min-width: $bp-image-beside-body) {
@@ -94,11 +84,6 @@
 
     width: $image-size;
     height: $image-size;
-
-    .c-slice:nth-child(2n) & {
-      left: auto;
-      right: 0.5rem;
-    }
 
     @media (min-width: $bp-image-stops-growing) {
       width: $image-max-size;
@@ -157,18 +142,8 @@
       // This carves out space for the absolute image
       padding-left: calc(#{$image-size} * 1.4);
 
-      .c-slice:nth-child(2n) & {
-        padding-left: 0;
-        padding-right: calc(#{$image-size} * 1.4);
-      }
-
       @media (min-width: $bp-image-stops-growing) {
         padding-left: calc(#{$image-max-size} * 1.4);
-
-        .c-slice:nth-child(2n) & {
-          padding-left: 0;
-          padding-right: calc(#{$image-max-size} * 1.4);
-        }
       }
     }
 
