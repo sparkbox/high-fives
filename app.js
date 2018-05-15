@@ -12,7 +12,8 @@ var myHelpers = require('./helpers');
 Object.assign(helpers, myHelpers);
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var team = require('./routes/team');
+var analytics = require('./routes/analytics');
 
 var app = express();
 
@@ -35,7 +36,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/team', team);
+app.use('/analytics', analytics);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
