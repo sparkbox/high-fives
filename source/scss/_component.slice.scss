@@ -40,6 +40,10 @@
   }
 
   &__inner-wrapper {
+    animation: reveal-up 2s $timing-function-ease-out-quart;
+    animation-delay: 0.6s;
+    animation-fill-mode: both;
+
     @media (min-width: $bp-image-beside-body) {
       // Contain absolute image
       position: relative

@@ -19,13 +19,14 @@ const randomExclamation = () => {
     'Excellent.',
     'Golly!',
     'High five!',
-    'Holy guacamole.',
-    'Holy moly.',
+    'Holy guacamole!',
+    'Holy moly!',
     'Impressive!',
     'Incredible.',
+    'What a legend.',
     'Nice!',
     'Nifty!',
-    'Nooice!',
+    'Noooice!',
     'Score!',
     'Spectacular!',
     'Splendid!',
@@ -36,7 +37,7 @@ const randomExclamation = () => {
     'Wowza!',
     'Yeehaw!',
     'Aw yiss.',
-    'Yes!',
+    'Yaaaasss!',
   ];
 
   return exclamations[Math.floor(Math.random() * exclamations.length)];
