@@ -49,7 +49,11 @@
     min-height: calc(#{$image-size} + 1.25rem);
 
     // This carves out space for the absolute image
-    padding-left: calc(#{$image-size} * 1.2);
+    padding-left: calc(#{$image-size} * 1.4);
+
+    @media (min-width: 40em) {
+      padding-left: calc(#{$image-size} * 1.2);
+    }
 
     @media (min-width: $bp-image-stops-growing) {
       min-height: calc(#{$image-max-size} + 1.25rem);
@@ -98,6 +102,10 @@
     // Border is drawn via box-shadow so it doesn't affect flow or cover up
     // any of the image
     box-shadow: 0 0 0 0.5rem white;
+
+    @media (min-width: 60em) {
+      box-shadow: 0 0 0 1rem white;
+    }
   }
 
   &__image-element {
