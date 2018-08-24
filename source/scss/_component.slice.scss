@@ -33,6 +33,12 @@
     background-color: c(sunshine);
   }
 
+  strong {
+    // A little hacky, but this tries to keep all the words in a
+    // strong element on the same line
+    display: inline-block;
+  }
+
   &__inner-wrapper {
     @media (min-width: $bp-image-beside-body) {
       // Contain absolute image
