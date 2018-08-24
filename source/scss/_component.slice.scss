@@ -49,11 +49,11 @@
     min-height: calc(#{$image-size} + 1.25rem);
 
     // This carves out space for the absolute image
-    padding-left: calc(#{$image-size} * 1.4);
+    padding-left: calc(#{$image-size} * 1.2);
 
     @media (min-width: $bp-image-stops-growing) {
       min-height: calc(#{$image-max-size} + 1.25rem);
-      padding-left: calc(#{$image-max-size} * 1.4);
+      padding-left: calc(#{$image-max-size} * 1.2);
     }
 
     @media (min-width: $bp-image-beside-body) {
@@ -115,6 +115,7 @@
     padding: 1.25rem 0;
 
     font-size: 2.5rem;
+    line-height: 1;
 
     @media (min-width: 25em) {
       font-size: 2.5 * 100vw / 25;
@@ -140,10 +141,10 @@
 
     @media (min-width: $bp-image-beside-body) {
       // This carves out space for the absolute image
-      padding-left: calc(#{$image-size} * 1.4);
+      padding-left: calc(#{$image-size} * 1.2);
 
       @media (min-width: $bp-image-stops-growing) {
-        padding-left: calc(#{$image-max-size} * 1.4);
+        padding-left: calc(#{$image-max-size} * 1.2);
       }
     }
 

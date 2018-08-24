@@ -6,30 +6,30 @@ router.get('/', function(req, res, next) {
     "people": [
       {
         "name": "Katy Bowman",
+        "firstName": "Katy",
+        "lastName": "Bowman",
         "id": 1,
-        "heShePronoun": "she",
-        "hisHerPronoun": "her",
         "image": "/assets/images/katy.jpg",
       },
       {
         "name": "Ethan Muller",
+        "firstName": "Ethan",
+        "lastName": "Muller",
         "id": 2,
-        "heShePronoun": "he",
-        "hisHerPronoun": "his",
         "image": "/assets/images/ethan.jpg",
       },
       {
         "name": "Patrick Fulton",
+        "firstName": "Patrick",
+        "lastName": "Fulton",
         "id": 3,
-        "heShePronoun": "he",
-        "hisHerPronoun": "his",
         "image": "/assets/images/patrick.jpg",
       },
       {
         "name": "Heather Taylor",
+        "firstName": "Heather",
+        "lastName": "Taylor",
         "id": 4,
-        "heShePronoun": "she",
-        "hisHerPronoun": "her",
         "image": "/assets/images/heather.jpg",
       }
     ]

@@ -39,16 +39,12 @@ function hydrateTeamData(teamAndAnalytics) {
   return { people: hydratedPeople };
 }
 
-function thing(data) {
-  console.log(data[0]);
-}
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   fetchData()
     .then((data) => {
       const hydratedData = hydrateTeamData(data);
-      res.render('index', { title: 'High ♥ Fives', people: hydratedData.people })
+      res.render('index', { title: 'High Fives', people: hydratedData.people })
     })
 });
 
