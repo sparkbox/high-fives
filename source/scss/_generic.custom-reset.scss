@@ -34,13 +34,13 @@ body {
     top: 0;
     bottom: 0;
 
-    background-image: url(/assets/svg/polka-dot-pattern.svg);
+    background-image: url(/assets/svg/heartz.svg);
     background-repeat: repeat;
 
     background-position: -10px;
     animation: bg-shift 0.5s steps(2) infinite;
 
-    background-size: 60px;
+    background-size: 90px;
 
     z-index: -1;
   }
