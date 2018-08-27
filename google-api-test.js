@@ -5,6 +5,15 @@ const scopes = 'https://www.googleapis.com/auth/analytics.readonly'
 const jwt = new google.auth.JWT(key.client_email, null, key.private_key, scopes)
 const view_id = '41465154'
 
+const pathsToFilter = [
+  '/', // We don't want to include the listing page
+  '/semantic_commit_messages', // written by Jeremy, who's no longer at Sparkbox
+]
+
+let filterString = `ga:pagePathLevel1==/foundry/`
+filterString += pathsToFilter.map((p) => `;ga:pagePathLevel2!=${p}`).join('');
+console.log(filterString)
+
 jwt.authorize((err, response) => {
   google.analytics('v3').data.ga.get(
     {
@@ -14,7 +23,7 @@ jwt.authorize((err, response) => {
       'end-date': 'today',
       metrics: 'ga:pageviews',
       dimensions: 'ga:pagePathLevel2',
-      filters: 'ga:pagePathLevel1==/foundry/;ga:pagePathLevel2!=/',
+      filters: filterString,
       'max-results': 10,
       sort: '-ga:pageviews',
     },
