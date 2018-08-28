@@ -49,21 +49,24 @@ const hydrateGAObjectWithScrapedData = async (obj) => {
   }
 }
 
-const formatAndHydrateGAResults = (err, result) => {
+const formatAndHydrateGAResults = (result) => {
   const analyticsData = result.data.rows.map(arrayFromGAToPrettyObject)
-  return analyticsData.map(hydrateGAObjectWithScrapedData)
+  return Promise.all(analyticsData.map(hydrateGAObjectWithScrapedData))
 }
 
 jwt.authorize(async (err, response) => {
-  google.analytics('v3').data.ga.get(GARequestOptions, async (err, result) => {
-    try {
-      const dataPromises = formatAndHydrateGAResults(err, result)
+  const analyticsPromise = google.analytics('v3').data.ga.get(GARequestOptions)
+        .then(formatAndHydrateGAResults)
+  const teamPromise = getTeamData()
 
-      Promise.all(dataPromises).then(data => {
-        console.log(data)
-      })
-    } catch (error) {
-      console.log(error)
-    }
+  Promise.all([analyticsPromise, teamPromise]).then(values => {
+    const [ analyticsResults, teamResults ] = values
+    
+    const hydratedResults = analyticsResults.map(result => {
+      return { ...result, author: teamResults.find(m => m.fullName === result.author) }
+    })
+
+    console.log(hydratedResults)
   })
+
 })
