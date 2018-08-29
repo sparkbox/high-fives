@@ -1,20 +1,23 @@
-{{#each people}}
-  <div class="c-slice">
-    <div class="c-slice__inner-wrapper">
+<div>
+  {{#each items}}
+    <div class="c-slice">
+      <div class="c-slice__inner-wrapper">
 
-      <div class="c-slice__image-and-name-wrapper">
-        <div class="c-slice__image-wrapper">
-          <img class="c-slice__image-element" src="{{ image }}">
+        <div class="c-slice__image-and-name-wrapper">
+          <div class="c-slice__image-wrapper">
+            <img class="c-slice__image-element" src="{{ author.photo }}">
+          </div>
+          <h2 class="c-slice__name">{{ author.firstName }} {{ author.lastName }}</h2>
         </div>
-        <h2 class="c-slice__name">{{ firstName }} {{ lastName }}</h2>
+
+        <p class="c-slice__body">
+          {{ author.firstName }} wrote <a href="{{ url }}">{{ title }}</a>, which scored <strong>{{ prettyNum views }} views</strong> in just the past week. <strong>{{ randomExclamation }}</strong>
+        </p>
+
+        <p class="c-slice__body"></p>
+
       </div>
-
-      <p class="c-slice__body">
-        {{ firstName }} wrote <a href="{{ article.url }}">{{ article.title }}</a>, which scored <strong>{{ prettyNum article.views }} views</strong> in the past month. <strong>{{ randomExclamation }}</strong>
-      </p>
-
-      <p class="c-slice__body"></p>
-
     </div>
-  </div>
-{{/each}}
+  {{/each}}
+
+</div>
