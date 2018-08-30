@@ -5,7 +5,7 @@ const main = async () => {
 
   const data = await fetchCombinedData()
 
-  console.log(data)
+  console.log(JSON.stringify(data))
 
   console.log('\n')
   console.timeEnd('Completed in')
