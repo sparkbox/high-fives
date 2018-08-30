@@ -5,7 +5,7 @@
 
   $slice-max-width: 80em;
 
-  min-height: 120vh;
+  min-height: 100vh;
   padding: 8rem $page-margin;
 
   // Contain padding within height
@@ -67,7 +67,8 @@
 
     margin-bottom: 25%;
 
-    transform: translateY(calc(var(--spring) * 0.2));
+    transform-origin: 50%;
+    transform: scale(calc(1 - var(--spring) * 0.001), calc(var(--spring) * 0.001 + 1));
 
     @media (min-width: $bp-split-layout) {
       margin-bottom: 0;

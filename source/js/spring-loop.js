@@ -13,9 +13,9 @@ window.spring = {
   force: 0,
 
   // These values stay as-is, and affect the feel of the spring
-  mass: 1.5,
-  k: 0.5,
-  damp: 0.8,
+  mass: 1.9,
+  k: 0.4,
+  damp: 0.86,
 
   // This is the number the spring wants to be at
   target: 0,
@@ -39,12 +39,12 @@ const update = () => {
 }
 
 const draw = () => {
-  document.documentElement.style.setProperty('--spring', `${spring.formattedPos}px`)
+  document.documentElement.style.setProperty('--spring', spring.formattedPos)
   // document.documentElement.style.setProperty('--n', n)
 }
 
 const scrollState = {
-  pos: window.pageYOffset,
+  pos: 0,
   delta: 0,
 }
 window.addEventListener('scroll', (e) => {
@@ -54,7 +54,7 @@ window.addEventListener('scroll', (e) => {
   scrollState.pos = pos
   scrollState.delta = delta
 
-  spring.vel = -delta
+  spring.vel = Math.abs(delta)
 })
 
 MainLoop.setUpdate(update).setDraw(draw).start()
