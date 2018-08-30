@@ -10,7 +10,7 @@ router.get('/', async (req, res, next) => {
   const shuffledItems = shuffle(items)
   const firstFiveShuffledItems = shuffledItems.slice(0, 5)
 
-  const title = `High Fives${env === 'development' ? ' | DEV MODE' : ''}`
+  const title = `High Fives${env === 'development' ? ' | 🚧 DEV MODE' : ''}`
 
   res.render('index', { title, items: firstFiveShuffledItems})
 });
