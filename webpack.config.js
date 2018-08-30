@@ -5,6 +5,7 @@ const jsPath = path.resolve('./src/js');
 
 module.exports = {
   entry: './source/js/app.js',
+  mode: 'development',
   output: {
     path: path.join(__dirname, './dist/js'),
     filename: "[name].js"
