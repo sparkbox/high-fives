@@ -3,16 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "clean": "rimraf public/css",
+    "clean": "rimraf dist/css",
     "build": "npm run clean && parallelshell 'npm run styles' 'npm run assets'",
-    "styles": "node-sass source/scss/ -o public/css",
-    "assets": "ncp source/assets public/assets --stopOnErr",
+    "styles": "node-sass source/scss/ -o dist/css",
+    "assets": "ncp source/assets dist/assets --stopOnErr",
     "prestart": "npm run build",
     "js": "webpack",
-    "start": "parallelshell 'node tasks/watch.js' 'nodemon ./bin/www'"
+    "start": "parallelshell 'node tasks/watch.js' 'nodemon ./bin/www' 'webpack --watch'"
   },
   "dependencies": {
-    "babel-minify-webpack-plugin": "^0.3.1",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
     "chokidar": "^1.7.0",
@@ -34,6 +36,10 @@
     "parallelshell": "^3.0.2",
     "rimraf": "^2.6.2",
     "serve-favicon": "^2.4.5",
-    "shelljs": "^0.7.8"
+    "shelljs": "^0.7.8",
+    "webpack": "^4.17.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.0"
   }
 }

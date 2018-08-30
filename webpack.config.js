@@ -1,10 +1,10 @@
 const globby = require('globby');
 const path = require('path');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
+// const MinifyPlugin = require('babel-minify-webpack-plugin');
 const jsPath = path.resolve('./src/js');
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: './source/js/app.js',
   output: {
     path: path.join(__dirname, './dist/js'),
     filename: "[name].js"
@@ -13,14 +13,17 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: [
-          { loader: 'babel-loader', options: { presets: ['env'] } }
-        ],
-        exclude: /node_modules/
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
-  },
-  plugins: [
-    new MinifyPlugin()
-  ]
+  }
+  // plugins: [
+  //   new MinifyPlugin()
+  // ]
 };
