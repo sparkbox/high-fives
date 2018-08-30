@@ -6,7 +6,7 @@
   $slice-max-width: 80em;
 
   min-height: 95vh;
-  padding: 3rem $page-margin;
+  padding: 8rem $page-margin;
 
   // Contain padding within height
   box-sizing: border-box;
@@ -101,7 +101,7 @@
         fill: none;
         stroke: white;
         stroke-width: 0.5rem;
-        stroke-dasharray: 3.5 18.95;
+        stroke-dasharray: 4 27.5;
       }
     }
   }
