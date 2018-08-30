@@ -21,6 +21,7 @@ const randomExclamation = () => {
     'High five!',
     'Holy guacamole!',
     'Holy moly!',
+    'Holy cannoli!',
     'Impressive!',
     'Incredible.',
     'What a legend.',

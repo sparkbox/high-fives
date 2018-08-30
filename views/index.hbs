@@ -3,18 +3,20 @@
     <div class="c-slice">
       <div class="c-slice__inner-wrapper">
 
-        <div class="c-slice__image-and-name-wrapper">
-          <div class="c-slice__image-wrapper">
+        {{! This element is aria-hidden, since it doesn't really contain }}
+        {{! information, just some eye candy }}
+        <div class="c-slice__image-and-shape-wrapper" aria-hidden="true">
+          <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill="white" />
+          </svg>
+          <div class="c-slice__image-cropper">
             <img class="c-slice__image-element" src="{{ author.photo }}">
           </div>
-          <h2 class="c-slice__name">{{ author.firstName }} {{ author.lastName }}</h2>
         </div>
 
         <p class="c-slice__body">
-          {{ author.firstName }} wrote <a href="{{ url }}">{{ title }}</a>, which scored <strong>{{ prettyNum views }} views</strong> in just the past week. <strong>{{ randomExclamation }}</strong>
+          <strong>{{ author.firstName }} wrote <a href="{{ url }}">{{ title }}</a>,</strong> which was looked at <strong>{{ prettyNum views }} times</strong> in just the past week. <strong class="c-slice__exclamation">{{ randomExclamation }}</strong>
         </p>
-
-        <p class="c-slice__body"></p>
 
       </div>
     </div>
