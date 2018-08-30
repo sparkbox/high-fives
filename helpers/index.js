@@ -28,6 +28,7 @@ const randomExclamation = () => {
     'Nice!',
     'Nifty!',
     'Noooice!',
+    'Not too shabby!',
     'Score!',
     'Spectacular!',
     'Splendid!',
