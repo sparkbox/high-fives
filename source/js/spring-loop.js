@@ -1,7 +1,5 @@
 import MainLoop from 'mainloop.js'
 
-let n = 0
-
 // Someday I'll make this a proper class.
 // Today is not that day.
 window.spring = {
@@ -35,12 +33,10 @@ updateSpring()
 
 const update = () => {
   updateSpring()
-  // n += 0.1
 }
 
 const draw = () => {
   document.documentElement.style.setProperty('--spring', spring.formattedPos)
-  // document.documentElement.style.setProperty('--n', n)
 }
 
 const scrollState = {
