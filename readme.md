@@ -1,4 +1,4 @@
-# High Fives
+![High Fives](docs/high-fives-logo.png)
 
 A website to showcase Sparkboxers doing cool things.
 
@@ -41,5 +41,11 @@ The JWT lives in the 1Password Sparkbox Team vault. It's filed under _"High Five
 2. Hover the file icon → click the down arrow → **Show in Finder**
 3. Copy the revealed _client_secret.json_ file into the root of the high-fives repo
 
-After this, you should be good to go. However, it's important that you **do not check this file into the repo,** as it contains important credentials. It will be ignored as part of the `.gitignore` file, so this is only a concern if you rename the file or put it in a nested directory.
+After this, you should be good to go:
+
+```
+NODE_ENV=production npm start
+```
+
+However, it's important that you **do not check this file into the repo,** as it contains important credentials. It will be ignored as part of the `.gitignore` file, so this is only a concern if you rename the file or put it in a nested directory.
 
