@@ -1,6 +1,3 @@
-// Most importantly...
-var colors = require('colors');
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -12,10 +9,6 @@ var helpers = require('handlebars-helpers')();
 var myHelpers = require('./helpers');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
-
-console.log(`
-Starting app in ${process.env.NODE_ENV.bold.blue} environment
-`)
 
 // Merges in custom helpers with helpers from handlebars-helpers repo
 Object.assign(helpers, myHelpers);
