@@ -10,7 +10,7 @@ Starting app in ${env.bold.blue} environment
 `)
 
 if (env === 'development') {
-  shell.exec("parallelshell 'node tasks/watch.js' 'nodemon ./bin/www' 'webpack --watch'")
+  shell.exec("parallelshell 'pm2-runtime start ecosystem.config.js' 'node tasks/watch.js' 'webpack --watch'")
 } else if (env === 'production') {
-  shell.exec("parallelshell 'nodemon ./bin/www' 'webpack'")
+  shell.exec("parallelshell 'pm2-runtime start ecosystem.config.js' 'webpack'")
 }

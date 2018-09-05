@@ -1,3 +1,6 @@
+// Hi! I'm the express app that acts as
+// the web server.
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -9,6 +12,7 @@ var helpers = require('handlebars-helpers')();
 var myHelpers = require('./helpers');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+process.env.DISABLE_CACHE = process.env.DISABLE_CACHE || false
 
 // Merges in custom helpers with helpers from handlebars-helpers repo
 Object.assign(helpers, myHelpers);

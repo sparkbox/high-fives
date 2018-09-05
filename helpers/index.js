@@ -1,4 +1,5 @@
 const Handlebars = require('handlebars');
+const moment = require('moment');
 
 // I guess all custom helpers can live in this file until it gets too big
 // ¯\_(ツ)_/¯
@@ -6,6 +7,10 @@ const Handlebars = require('handlebars');
 const prettyNum = (number, options) => {
   // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+const fromNow = (time) => {
+  return moment(time).fromNow()
 }
 
 const randomExclamation = () => {
@@ -49,4 +54,5 @@ const randomExclamation = () => {
 module.exports = {
   prettyNum,
   randomExclamation,
+  fromNow,
 }
