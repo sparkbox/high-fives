@@ -1,0 +1,27 @@
+{
+  "name": "high-fives",
+  "description": "A website to encourage Sparkboxers who are doing cool things.",
+  "scripts": {
+  },
+  "env": {
+    "CLIENT_EMAIL": {
+      "required": true
+    },
+    "PRIVATE_KEY": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
