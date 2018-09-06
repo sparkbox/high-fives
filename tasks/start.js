@@ -10,7 +10,7 @@ Starting app in ${env.bold.blue} environment
 `)
 
 if (env === 'development') {
-  shell.exec("parallelshell 'pm2-runtime start ecosystem.config.js' 'node tasks/watch.js' 'webpack --watch'")
+  shell.exec("parallelshell 'pm2-runtime start ecosystem.config.js --watch' 'node tasks/watch.js' 'webpack --watch'")
 } else if (env === 'production') {
   shell.exec("parallelshell 'pm2-runtime start ecosystem.config.js' 'webpack'")
 }
