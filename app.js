@@ -6,6 +6,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var forceSSL = require('express-force-ssl');
 var bodyParser = require('body-parser');
 var hbs = require('express-handlebars');
 var helpers = require('handlebars-helpers')();
@@ -13,6 +14,8 @@ var myHelpers = require('./helpers');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 process.env.DISABLE_CACHE = process.env.DISABLE_CACHE || false
+
+const env = process.env.NODE_ENV
 
 // Merges in custom helpers with helpers from handlebars-helpers repo
 Object.assign(helpers, myHelpers);
@@ -37,13 +40,14 @@ app.set('view engine', 'hbs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+if (env === 'production') {
+  app.use(forceSSL);
+}
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/', index);
-app.use('/team', team);
-app.use('/analytics', analytics);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

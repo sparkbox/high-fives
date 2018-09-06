@@ -1,7 +1,6 @@
-const shuffle = require('../lib/shuffle')
-
 const fs = require('fs');
 const express = require('express');
+const shuffle = require('../lib/shuffle')
 const router = express.Router();
 const env = process.env.NODE_ENV
 
