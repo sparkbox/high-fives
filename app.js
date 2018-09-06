@@ -7,12 +7,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var sslify = require('express-sslify');
 var hbs = require('express-handlebars');
 var helpers = require('handlebars-helpers')();
 var myHelpers = require('./helpers');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 process.env.DISABLE_CACHE = process.env.DISABLE_CACHE || false
+
+const env = process.env.NODE_ENV
 
 // Merges in custom helpers with helpers from handlebars-helpers repo
 Object.assign(helpers, myHelpers);
@@ -38,6 +41,9 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+if (env === 'production') {
+  app.use(sslify.HTTPS({ trustProtoHeader: true }));
+}
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
 
