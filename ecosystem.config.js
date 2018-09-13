@@ -9,10 +9,25 @@ module.exports = {
   apps : [{
     name: 'www',
     script: 'bin/www',
-    ignore_watch: ignoreList,
+    watch: [
+      'bin/www',
+      'app.js',
+      'routes',
+      'lib',
+    ],
   }, {
     name: 'data-fetcher',
     script: 'data-fetcher.js',
-    ignore_watch: ignoreList,
+    watch: [
+      'data-fetcher.js',
+      'lib',
+    ],
+  }, {
+    name: 'slackbot',
+    script: 'slackbot.js',
+    watch: [
+      'slackbot.js',
+      'lib',
+    ],
   }],
 }

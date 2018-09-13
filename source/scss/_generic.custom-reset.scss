@@ -47,3 +47,11 @@ body {
 }
 
 ::selection { background-color: rgba(white, 0.5); }
+
+blockquote {
+  margin: 0;
+}
+
+cite {
+  font-style: inherit;
+}

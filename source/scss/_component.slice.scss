@@ -2,7 +2,6 @@
   $bp-split-layout: 48em;
 
   $page-margin: 10vw;
-
   $slice-max-width: 80em;
 
   min-height: 100vh;
@@ -176,5 +175,11 @@
     @media (min-width: $bp-split-layout + 40em) {
       font-size: 2.1rem;
     }
+  }
+
+  &__source {
+    font-size: 0.5em;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }
