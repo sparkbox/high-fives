@@ -2,3 +2,5 @@ node_modules/
 dist/
 client_secret.json
 fetched-data/
+.env
+credentials.json
