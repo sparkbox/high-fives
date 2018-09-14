@@ -68,7 +68,7 @@ router.get('/', async (req, res, next) => {
   const mixedData = mixData(typedPostAnalyticsData, typedMessageData)
   const firstFewMixedItems = mixedData.slice(0, 10)
 
-  const title = `High Fives`
+  const title = 'High Fives'
 
   res.render('index', { title, items: firstFewMixedItems, fetchedAt})
 });
