@@ -7,6 +7,8 @@
 // I'm meant to be run in paralell with the
 // express app.
 
+require('dotenv').config()
+
 const fs = require('fs')
 const colors = require('colors')
 const mkdirp = require('mkdirp')
