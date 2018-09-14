@@ -7,13 +7,8 @@ const submitMessage = require('./lib/submit-message')
 
 const token = process.env.SLACK_TOKEN
 
-const validApprovers = [
-  'UCLPFL5NC',
-]
-
-const channelsToWatch = [
-  'CCP5BTQAW',
-]
+const validApprovers = process.env.VALID_APPROVERS
+const channelsToWatch = process.env.CHANNELS_TO_WATCH
 
 const isValidReaction = (reaction) => {
   return !!reaction.match(/earth_/)
@@ -24,7 +19,7 @@ const isValidMessage = (message) => {
   return !!message.text.match(userMentionRegex)
 }
 
-const isValidApprover = a => validApprovers.includes(a)
+const isValidApprover = a => validApprovers.split(',').includes(a)
 const isValidAuthor = s => !!s
 const inChannelsToWatch = c => channelsToWatch.includes(c)
 
