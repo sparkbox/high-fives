@@ -39,21 +39,13 @@ const writeFile = async (data) => {
 const fetchAndSaveData = async () => {
   const startTime = performance.now()
   const combinedData = await fetchCombinedData()
-  const d = new Date()
-
-  const dataForFile = {
-    fetchedAt: d,
-    data: combinedData,
-  }
 
   await makeDataDir()
-    .then(() => writeFile(JSON.stringify(dataForFile)))
+    .then(() => writeFile(JSON.stringify(combinedData)))
 
   const endTime = performance.now()
 
-  console.log(`Fetched and saved ${fullFilePath.blue} in ` + `${Math.round(endTime - startTime)}ms`.magenta + ` at ${d.toString().gray}`)
-
-  return d
+  console.log(`Fetched and saved ${fullFilePath.blue} in ` + `${Math.round(endTime - startTime)}ms`.magenta + ` at ${Date.now().toString().gray}`)
 }
 
 new CronJob(`0 */${everyNMinutes} * * * *`, fetchAndSaveData, null, true, 'America/New_York', {}, true);

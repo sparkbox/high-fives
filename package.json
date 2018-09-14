@@ -45,9 +45,9 @@
     "serve-favicon": "^2.4.5",
     "shelljs": "^0.7.8",
     "slack-hawk-down": "^0.3.5",
-    "webpack": "^4.17.1"
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
   },
   "devDependencies": {
-    "webpack-cli": "^3.1.0"
   }
 }
