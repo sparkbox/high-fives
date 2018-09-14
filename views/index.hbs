@@ -18,7 +18,7 @@
           {{#is this.type 'analytics'}}
             <p class="c-slice__body">
               <strong>{{ featurePerson.firstName }} wrote <a href="{{ url }}">{{ title}}</a></strong>
-              which was looked at <strong>{{ prettyNum views }} times</strong> in just the past month.
+              which was looked at <strong>{{{ numberToGeneralNumberOfTimes views }}}</strong> in just the past month.
               <strong class="c-slice__exclamation">{{ randomExclamation }}</strong>
             </p>
           {{/is}}

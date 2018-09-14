@@ -4,9 +4,16 @@ const moment = require('moment');
 // I guess all custom helpers can live in this file until it gets too big
 // ¯\_(ツ)_/¯
 
-const prettyNum = (number, options) => {
-  // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+const numberToGeneralNumberOfTimes = (number) => {
+  // This converts a number like "373" into a phrase
+  // like "hundeds of times". This is to put less focus
+  // on actual numbers, and just give a general idea of
+  // how many times a post was viewed.
+
+  if (number < 199) return "dozens of times"
+  if (number < 1999) return "hundreds of times"
+
+  return "<em>thousands</em> of times"
 }
 
 const fromNow = (time) => {
@@ -52,7 +59,7 @@ const randomExclamation = () => {
 }
 
 module.exports = {
-  prettyNum,
+  numberToGeneralNumberOfTimes,
   randomExclamation,
   fromNow,
 }
