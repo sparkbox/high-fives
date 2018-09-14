@@ -60,8 +60,6 @@ router.get('/', async (req, res, next) => {
   }})
 
   const mixedData = mixData(typedPostAnalyticsData, typedMessageData)
-  // console.log(mixedData)
-  // const shuffledData = shuffle(data.postAnalyticsData)
   const firstFiveShuffledItems = mixedData.slice(0, 5)
 
   const title = `High Fives`
