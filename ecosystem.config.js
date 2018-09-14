@@ -13,6 +13,7 @@ module.exports = {
       'bin/www',
       'app.js',
       'routes',
+      'helpers',
       'lib',
     ],
   }, {
