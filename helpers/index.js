@@ -12,8 +12,7 @@ const numberToGeneralNumberOfTimes = (number) => {
 
   if (number < 199) return "dozens of times"
   if (number < 1999) return "hundreds of times"
-
-  return "<em>thousands</em> of times"
+  return "thousands of times"
 }
 
 const fromNow = (time) => {
