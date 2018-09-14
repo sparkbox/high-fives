@@ -21,7 +21,23 @@ After cloning this repo, we'll need to install the dependencies of this project.
 npm install
 ```
 
-### Running the app
+This will run for a little while. When it's done, you should have all required dependencies installed.
+
+We're almost ready to run the app, but first we need to add credentials to an `.env` file in the root of this project. These credentials can't be stored in the codebase, because that would be insecure.
+
+#### Installing credentials for Sparkboxers
+
+Credentials are stored in the 1Password Sparkbox Team vault. Search for "High Fives .env file", and drop that file into the root of this project. You should have everything you need to run the app now.
+
+*Never check this file into the repo!* It contains credentials, and we don't want them to be public. It is set to be ignored by git, so this shouldn't be a problem. Just don't rename the file or put it in a different directory.
+
+#### Installing credentials for non-Sparkboxers
+
+If you want to set this up for your own company, awesome! But you're on your own for this part. But I believe in you! You'll have to make some accounts on your own, and put some API keys in a `.env` file in the root of this project. You can `cp .env-sample .env` for a template to get started.
+
+If you get stuck, feel free to open up an issue.
+
+### Startup
 
 Running the app is handled through npm's scripts. After installation, you can start the app by running:
 
@@ -29,25 +45,18 @@ Running the app is handled through npm's scripts. After installation, you can st
 npm start
 ```
 
-This will build out styles and scripts, as well as start up the node app itself. This will also watch files for changes and re-run tasks when necessary.
+This will build out styles and scripts, as well as start up the node app itself. By default, this will run in the **development** environment, which will watch files for changes and re-run tasks and apps when necessary.
 
-#### Environments
+When running in the `production` environment, SSL is forced. I can't think of any reason why you should run in this mode locally.
 
-**By default, the app will run in the `development` environment. While in this environment, data will be retrieved from a static, cached data file.** When in `development`, you can run the app offline.
+#### Using the app
 
-**When running in the `production` environment, the app will retrieve real live data from servers. Since this is using actual Google Analytics data, you'll need to put a JSON Web Token (JWT) in place.** This is a JSON file that contains all the juicy credentials to read data from Google Analytics. Without this file, you can't run in production mode.
+#### Express app
 
-The JWT lives in the 1Password Sparkbox Team vault. It's filed under _"High Fives Google Analytics JWT"_. When you find it, you need to place it in the root directory of this repo. To do this:
+At this point, you should be able to see the app in a web browser! Visit http://localhost:3000 to see it in action.
 
-1. Retrieve the actual file in 1Password by clicking **Click to Download & View**. This will trigger a short download.
-2. Hover the file icon → click the down arrow → **Show in Finder**
-3. Copy the revealed `client_secret.json` file into the root of the high-fives repo
+Data refreshes when starting up, then on a 10 minute interval. If you want _fresh_ data, visit localhost:3000/?fresh=true (This isn't enabled by default because it takes longer to load)
 
-After this, you should be good to go:
+#### Slackbot
 
-```
-NODE_ENV=production npm start
-```
-
-However, it's important that you **do not check this file into the repo,** as it contains important credentials. It will be ignored as part of the `.gitignore` file, so this is only a concern if you rename the file or put it in a nested directory.
-
+Running the app will also run the slackbot, but that part isn't documented yet. 😉
