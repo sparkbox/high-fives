@@ -1,4 +1,5 @@
 // following this mostly: https://slackapi.github.io/node-slack-sdk/rtm_api
+
 require('dotenv').config()
 
 const colors = require('colors')
