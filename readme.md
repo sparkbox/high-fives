@@ -27,15 +27,19 @@ We're almost ready to run the app, but first we need to add credentials to an `.
 
 #### Installing credentials for Sparkboxers
 
-Credentials are stored in the 1Password Sparkbox Team vault. Search for "High Fives .env file", and drop that file into the root of this project. You should have everything you need to run the app now.
+Credentials are stored in the 1Password Sparkbox Team vault. Search for **"High Fives .env file"**, and drop that file into the root of this project. You should have everything you need to run the app now.
 
-*Never check this file into the repo!* It contains credentials, and we don't want them to be public. It is set to be ignored by git, so this shouldn't be a problem. Just don't rename the file or put it in a different directory.
+**_Never check this file into the repo!_** It contains credentials, and we don't want them to be public. It is set to be ignored by git, so this shouldn't be a problem. Just don't rename the file or put it in a different directory.
 
 #### Installing credentials for non-Sparkboxers
 
-If you want to set this up for your own company, awesome! But you're on your own for this part. But I believe in you! You'll have to make some accounts on your own, and put some API keys in a `.env` file in the root of this project. You can `cp .env-sample .env` for a template to get started.
+If you want to set this up for your own team, awesome! You'll have to get your hands a little messy. But I believe in you! You'll have to make some accounts on your own, and put some API keys in a `.env` file in the root of this project. You can copy the template to get started:
 
-If you get stuck, feel free to open up an issue.
+```
+cp .env-sample .env 
+```
+
+If you get stuck, feel free to open up an issue! And hey, if you get your own fork up and running, [we'd love to hear about it!](https://twitter.com/hearsparkbox) 😁
 
 ### Startup
 
@@ -55,7 +59,7 @@ When running in the `production` environment, SSL is forced. I can't think of an
 
 At this point, you should be able to see the app in a web browser! Visit http://localhost:3000 to see it in action.
 
-Data refreshes when starting up, then on a 10 minute interval. If you want _fresh_ data, visit localhost:3000/?fresh=true (This isn't enabled by default because it takes longer to load)
+Data refreshes when starting up, then on a 10 minute interval. If you want fresh data, visit [add a query parameter of `fresh=true`](http://localhost:3000/?fresh=true). This isn't enabled by default because it takes longer to load.
 
 #### Slackbot
 

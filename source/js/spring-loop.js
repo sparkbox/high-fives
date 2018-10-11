@@ -1,7 +1,14 @@
+// What a nice battery you have there.
+// It'd be a shame if something were to
+//
+//
+//
+// happen to it.
+
 import MainLoop from 'mainloop.js'
 
-// Someday I'll make this a proper class.
-// Today is not that day.
+// This should probably be a class.
+// Whatever.
 window.spring = {
   // These values are state that gets updated repeatedly
   pos: 0,
@@ -10,7 +17,7 @@ window.spring = {
   accel: 0,
   force: 0,
 
-  // These values stay as-is, and affect the feel of the spring
+  // These constants stay as-is. They affect the feel of the spring.
   mass: 1.9,
   k: 0.4,
   damp: 0.86,
