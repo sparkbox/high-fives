@@ -1,16 +1,23 @@
-var colors = require('colors');
-const shell = require("shelljs");
+const shell = require('shelljs');
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+console.log(`Starting site for ${process.env.NODE_ENV || 'development'}`);
 
-const env = process.env.NODE_ENV
+const tasks = {
+  production: ['copy', 'patterns', 'sass', 'js'],
 
-console.log(`
-Starting app in ${env.bold.blue} environment
-`)
+  // JS isn't present here because watch
+  // does an initial render.
+  development: ['copy', 'patterns', 'sass', 'server', 'watch'],
+};
 
-if (env === 'development') {
-  shell.exec("parallelshell 'pm2-runtime start ecosystem.config.js --watch' 'node tasks/watch.js' 'webpack --watch'")
-} else if (env === 'production') {
-  shell.exec("parallelshell 'pm2-runtime start ecosystem.config.js' 'webpack'")
+function parallelTasks(env) {
+  const list = tasks[env].map(task => `"npm run ${task}" `);
+
+  return `parallelshell ${list.join('')}`;
+}
+
+if (process.env.NODE_ENV === 'production') {
+  shell.exec(parallelTasks('production'));
+} else {
+  shell.exec(parallelTasks('development'));
 }

@@ -1,47 +1,25 @@
-const chokidar = require("chokidar");
-const path = require("path");
-const shell = require("shelljs");
-const exit = require("exit-hook");
-const options = {
-  ignoreDotFiles: true
-};
+'use strict';
 
-const watcher = chokidar.watch(['source/scss','source/assets'], {
-  ignored: /[\/\\]\./,
-  ignoreInitial: true
+const chokidar = require('chokidar');
+const shell = require('shelljs');
+
+chokidar.watch('src/scss/**/!(_split)*.scss').on('change', () => {
+  shell.exec('npm run sass');
 });
 
-watcher.on("change", f => checkTypeOfEvent(f));
-watcher.on("add", f => checkTypeOfEvent(f));
-
-/**
- * Does some checking on the file that changed
- *
- * @param f - file path that changed
- */
-const checkTypeOfEvent = (f) => {
-  const type = path.extname(f).split('.')[1];
-
-  if (type === "scss") {
-    buildStyles();
-  } else if (f.search(/source\/assets/) != -1) {
-    copyAssets();
-  }
-}
-
-const buildStyles = () => {
-  shell.exec('npm run styles', function(code, output){
-    console.log('✨  Built new styles');
-  });
-}
-
-const copyAssets = () => {
-  shell.exec('npm run assets', function(code, output){
-    console.log('👯  Copying assets');
-  });
-}
-
-exit(function () {
-  console.log('🗑  Cleaning up');
-  watcher.close();
+chokidar.watch('src/drizzle/**/*').on('change', () => {
+  shell.exec('npm run patterns');
 });
+
+chokidar.watch('src/js/**/*').on('change', () => {
+  shell.exec('npm run js');
+});
+
+chokidar.watch('src/public/**/*').on('change', () => {
+  shell.exec('npm run copy');
+});
+
+// chokidar.watch(['src/js/**/*.js', 'tasks/**/*.js', 'lib/**/*.js']).on('change', () => {
+//   // In dev, builds are taken care of by webpack --watch
+//   shell.exec('npm run test:js');
+// });
