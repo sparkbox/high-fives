@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "clean": "rimraf dist/css",
-    "build": "npm run clean && parallelshell 'npm run styles' 'npm run assets'",
+    "build": "npm run clean && npm run styles && npm run assets",
     "styles": "node-sass source/scss/ -o dist/css",
     "assets": "mkdirp dist && ncp source/assets dist/assets --stopOnErr",
     "prestart": "npm run build",
@@ -18,7 +18,7 @@
     "babel-loader": "^8.0.0",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
-    "chokidar": "^1.7.0",
+    "chokidar": "^3.3.1",
     "colors": "^1.3.2",
     "cookie-parser": "~1.4.3",
     "cron": "^1.4.1",
@@ -29,13 +29,13 @@
     "express-handlebars": "^3.0.0",
     "express-sslify": "^1.2.0",
     "globby": "^8.0.1",
-    "googleapis": "^33.0.0",
-    "handlebars": "^4.0.11",
+    "googleapis": "^46.0.0",
+    "handlebars": "^4.5.3",
     "handlebars-helpers": "^0.10.0",
     "mainloop.js": "^1.0.4",
     "mkdirp": "^0.5.1",
     "moment": "^2.22.2",
-    "morgan": "^1.9.0",
+    "morgan": "^1.9.1",
     "ncp": "^2.0.0",
     "node-fetch": "^2.2.0",
     "node-sass": "^4.9.3",
@@ -45,9 +45,8 @@
     "serve-favicon": "^2.4.5",
     "shelljs": "^0.7.8",
     "slack-hawk-down": "^0.3.5",
-    "webpack": "^4.17.1",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.1.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
