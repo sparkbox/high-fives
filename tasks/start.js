@@ -3,11 +3,11 @@ const shell = require('shelljs');
 console.log(`Starting site for ${process.env.NODE_ENV || 'development'}`);
 
 const tasks = {
-  production: ['copy', 'patterns', 'sass', 'js'],
+  production: ['copy', 'patterns', 'js'],
 
   // JS isn't present here because watch
   // does an initial render.
-  development: ['copy', 'patterns', 'sass', 'server', 'watch'],
+  development: ['copy', 'patterns', 'server', 'watch'],
 };
 
 function parallelTasks(env) {

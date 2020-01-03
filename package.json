@@ -7,7 +7,7 @@
     "start": "node tasks/start.js",
     "clean": "rimraf dist/",
     "server": "node tasks/server.js",
-    "watch": "parallelshell 'node tasks/watch.js' 'webpack --watch'",
+    "watch": "node tasks/watch.js",
     "js": "webpack",
     "patterns": "node tasks/patterns.js",
     "copy": "node tasks/copy.js",
